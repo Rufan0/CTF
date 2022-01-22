@@ -498,7 +498,7 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 
 ```
-- Daha sonra isə bu prive key-i lokal maşınımızda bir text olaraq qeyd edirik və `chmod 400 privatekey17` edirik.
+- Daha sonra isə bu private key-i lokal maşınımızda bir text olaraq qeyd edirik və `chmod 400 privatekey17` edirik.
 - `ssh -i privatekey17 bandit17@bandit.labs.overthewire.org -p 2220` və bandit 17 yə bağlandıq.
 - `cat /etc/bandit_pass/bandit17` bu command ilə bandit 17 nin parolunu eldə etmiş olduq. 
 - parolu copy edib çıxırıq `xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn`
