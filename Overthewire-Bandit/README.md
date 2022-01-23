@@ -525,4 +525,26 @@ bandit17@bandit:~$
 - parolu copy edib çıxırıq `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`
 
 
+**Bandit [LEVEL 18->19](https://overthewire.org/wargames/bandit/bandit15.html)**
+![bandit leve18-19](https://i.imgur.com/7WDGiIN.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit18
+```
+ `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`
+```
+-→ ~ ssh bandit18@bandit.labs.overthewire.org -p 2220
+Byebye !
+Connection to bandit.labs.overthewire.org closed.
+hackinganarchy@kali:~/Bandit#
+```
+- SSH vasitəsilə qoşulmağa cəhd etsək, dərhal sistemdən çıxırıq. Xoşbəxtlikdən, səhifə də bizə parolun hansı faylda olduğunu söyləyir VƏ ssh bizə shell olmadan əmrləri yerinə yetirmək imkanı verir. Bundan istifadə edərək parolu əldə etməyə çalışaq.
+```
+-→ ~ ssh bandit.labs.overthewire.org -p 2220 -l bandit18 cat readme
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit18@bandit.labs.overthewire.org's password:
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+```
+
+- parolu copy edib çıxırıq `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
 
