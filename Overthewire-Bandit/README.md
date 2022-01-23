@@ -11,7 +11,7 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 
 **Bandit [LEVEL 0](https://overthewire.org/wargames/bandit/bandit0.html)** 
 
-![bandit level-0](https://i.imgur.com/1EyLY3l.png)
+![bandit level-0](https://i.imgur.com/eSjrzZN.png)
 
 - Portu 2220-yə təyin etməklə istənilən SSH proqramı ilə bağlana bilərsiniz.
 ```
