@@ -525,8 +525,8 @@ bandit17@bandit:~$
 - parolu copy edib çıxırıq `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`
 
 
-**Bandit [LEVEL 18->19](https://overthewire.org/wargames/bandit/bandit15.html)**
-![bandit leve18-19](https://i.imgur.com/7WDGiIN.png)
+**Bandit [LEVEL 18->19](https://overthewire.org/wargames/bandit/bandit19.html)**
+![bandit leve18-19](https://i.imgur.com/yzjuRpp.png)
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit18
 ```
