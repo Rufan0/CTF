@@ -567,7 +567,7 @@ drwxr-xr-x 41 root     root     4096 May  7  2020 ..
 
 - Bu səviyyə bizi Linux sistemlərinin sındırılması zamanı nisbətən ümumi olan [Privilege Escalation](https://en.wikipedia.org/wiki/Privilege_escalation) vektoru ilə tanış edir.
 - Prolu oxumaq üçün “bandit20-do” binar sistemindən istifadə etməliyik.
->Yn qeyd: Həmin faylın icazələrinə baxsaq, “-rwsr-x—“, görərik ki, “x” hərfinin olması lazım olan yerdə “s” var. Bu, sadəcə olaraq SUID bitinin təyin olunduğunu bildirir.
+>Qeyd: Həmin faylın icazələrinə baxsaq, “-rwsr-x—“, görərik ki, “x” hərfinin olması lazım olan yerdə “s” var. Bu, sadəcə olaraq SUID bitinin təyin olunduğunu bildirir.
 Bu bit qurulubsa, proqramı kimin başlatmasından asılı olmayaraq, proqram həmişə sahibi istifadəçinin icazələri ilə (burada: “bandit20”) icra olunur.
 >İcazələr belə görünsəydi: “-rwxr-s—“, proqram həmişə sahiblik qrupunun kontekstində (burada: “bandit19”) yerinə yetiriləcəkdi.
 
