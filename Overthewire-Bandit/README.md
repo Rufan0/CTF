@@ -587,6 +587,7 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 istifadə olunan mənbələr:
 >Sources used:
-https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
-https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
-https://medium.com/@denizparlak_/overthewire-bandit-ctf-%C3%A7%C3%B6z%C3%BCmleri-a14ac8c148f1
+
+- https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
+- https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
+- https://medium.com/@denizparlak_/overthewire-bandit-ctf-%C3%A7%C3%B6z%C3%BCmleri-a14ac8c148f1
