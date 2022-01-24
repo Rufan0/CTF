@@ -548,3 +548,45 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
 - parolu copy edib çıxırıq `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
 
+**Bandit [LEVEL 19->20](https://overthewire.org/wargames/bandit/bandit20.html)**
+![bandit leve19-20](https://i.imgur.com/AvFHPPq.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit19
+```
+- `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
+```
+bandit19@bandit:~$ ls -la
+total 28
+drwxr-xr-x  2 root     root     4096 May  7  2020 .
+drwxr-xr-x 41 root     root     4096 May  7  2020 ..
+-rwsr-x---  1 bandit20 bandit19 7296 May  7  2020 bandit20-do
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3526 May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+```
+
+- Bu səviyyə bizi Linux sistemlərinin sındırılması zamanı nisbətən ümumi olan [Privilege Escalation](https://en.wikipedia.org/wiki/Privilege_escalation) vektoru ilə tanış edir.
+- Prolu oxumaq üçün “bandit20-do” binar sistemindən istifadə etməliyik.
+>Yn qeyd: Həmin faylın icazələrinə baxsaq, “-rwsr-x—“, görərik ki, “x” hərfinin olması lazım olan yerdə “s” var. Bu, sadəcə olaraq SUID bitinin təyin olunduğunu bildirir.
+Bu bit qurulubsa, proqramı kimin başlatmasından asılı olmayaraq, proqram həmişə sahibi istifadəçinin icazələri ilə (burada: “bandit20”) icra olunur.
+>İcazələr belə görünsəydi: “-rwxr-s—“, proqram həmişə sahiblik qrupunun kontekstində (burada: “bandit19”) yerinə yetiriləcəkdi.
+
+```
+bandit19@bandit:~$ ./bandit20-do id
+uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+```
+- Biz HƏR əmri bandit20 kimi işlədə bilərik, ona görə də sadəcə parol faylının məzmununu çıxara bilərik:
+```
+bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+```
+- parolu copy edib çıxırıq `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
+
+
+
+
+istifadə olunan mənbələr:
+>Sources used:
+https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
+https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
+https://medium.com/@denizparlak_/overthewire-bandit-ctf-%C3%A7%C3%B6z%C3%BCmleri-a14ac8c148f1
