@@ -10,7 +10,7 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 [Putty](https://putty.org/) vasitəsilə də bağlana bilərsiniz 
 
 
--> İstifadə olunan mənbələr:
+İstifadə olunan mənbələr:
 -> Sources used:
 
 - https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
