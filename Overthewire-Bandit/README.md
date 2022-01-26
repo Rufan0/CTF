@@ -591,3 +591,44 @@ istifadə olunan mənbələr:
 - https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
 - https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
 - https://medium.com/@denizparlak_/overthewire-bandit-ctf-%C3%A7%C3%B6z%C3%BCmleri-a14ac8c148f1
+
+
+**Bandit [LEVEL 20->21](https://overthewire.org/wargames/bandit/bandit21.html)**
+![bandit leve20-21](https://i.imgur.com/inJkcAk.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit20
+```
+- `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
+```
+bandit20@bandit:~$ ls -la
+total 32
+drwxr-xr-x  2 root     root      4096 May  7  2020 .
+drwxr-xr-x 41 root     root      4096 May  7  2020 ..
+-rw-r--r--  1 root     root       220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root      3526 May 15  2017 .bashrc
+-rw-r--r--  1 root     root       675 May 15  2017 .profile
+-rwsr-x---  1 bandit21 bandit20 12088 May  7  2020 suconnect
+```
+- Gördüyünüz kim suconnect faylı var
+- Səhifənin açıqlamasında bizə deyir ki, biz “suconnect”i yerinə yetirməli, 20-ci Səviyyə üçün parolu qaytaran yerli maşındakı porta qoşulmalıyıq. Bunun üçün bizə hər ikisinin SSH bağlantısı olan iki terminala ehtiyacımız var. Maşın bandit20 kimi. Birincidə parolu qaytaracağıq, ikincisində “suconnect” işlədəcəyik.
+- Əvvəlcə gələn bağlantıları dinləmək üçün birinci terminalda netcat-dan istifadə edək:
+```
+bandit20@bandit:~$ nc -lvp 4444
+listening on [any] 4444 ...
+```
+- -l nc-ə hər hansı daxil olan əlaqələri dinləməyi bildirir və -p 4444 qulaq asmaq üçün portu təyin edir. -v baş verənlərlə bağlı rəy almaq üçün ətraflı çıxış deməkdir.
+> Portu təsadüfi seçdim, istifadə olunmayan istənilən port ola bilər
+
+- İkinci terminalda indi “suconnect” proqramını işə salırıq:
+`bandit20@bandit:~$ ./suconnect 55123`
+
+- Daha sonra Səviyyə 20 parolunu göndərsək, əvəzində Səviyyə 21 parolunu alırıq. Netcat-in işə salınmasından parolun alınmasına qədər birinci terminalda bütün çıxış belə görünür:
+```
+bandit20@bandit:~$ nc -lvp 55123
+listening on [any] 55123 ...
+connect to [127.0.0.1] from localhost [127.0.0.1] 48660
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+```
+- parolu copy edib çıxırıq `gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr`
