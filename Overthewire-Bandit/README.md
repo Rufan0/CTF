@@ -11,7 +11,7 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 
 
 İstifadə olunan mənbələr:
--> Sources used:
+> Sources used:
 
 - https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
 - https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
