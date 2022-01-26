@@ -9,6 +9,15 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 
 [Putty](https://putty.org/) vasitəsilə də bağlana bilərsiniz 
 
+
+istifadə olunan mənbələr:
+>Sources used:
+
+- https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
+- https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
+- https://medium.com/@denizparlak_/overthewire-bandit-ctf-%C3%A7%C3%B6z%C3%BCmleri-a14ac8c148f1
+
+
 **Bandit [LEVEL 0](https://overthewire.org/wargames/bandit/bandit0.html)** 
 
 ![bandit level-0](https://i.imgur.com/eSjrzZN.png)
@@ -581,16 +590,6 @@ bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ```
 - parolu copy edib çıxırıq `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
-
-
-
-
-istifadə olunan mənbələr:
->Sources used:
-
-- https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
-- https://github.com/s4shaNull/OverTheWire-Bandit-Writeup
-- https://medium.com/@denizparlak_/overthewire-bandit-ctf-%C3%A7%C3%B6z%C3%BCmleri-a14ac8c148f1
 
 
 **Bandit [LEVEL 20->21](https://overthewire.org/wargames/bandit/bandit21.html)**
