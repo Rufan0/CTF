@@ -7,7 +7,7 @@
 
 SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz mənim istifadə mən [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) vasitəsilə bağlanıram.
 
-[Putty](https://putty.org/) vasitəsilə də bağlana bilərsiniz 
+[Putty](https://youtu.be/pLxR7EddEeM) vasitəsilə də bağlana bilərsiniz 
 
 
 İstifadə etdiyim mənbələr:
