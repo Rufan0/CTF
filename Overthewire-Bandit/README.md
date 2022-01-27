@@ -32,8 +32,14 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 
 **Bandit [LEVEL 0->1](https://overthewire.org/wargames/bandit/bandit1.html)** 
 ![bandit level-1](https://i.imgur.com/BadC8Ut.png)
-- `ls`
-- `cat readme`
+```
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+bandit0@bandit:~$
+```
+- `ls` əmri icra etdik və readme faylı olduğunu gördük daha sonra isə `cat` əmri ilə həmin faylın içərisini oxuduq.
 - parolu copy edib çıxırıq `boJ9jbbUNNfktd78OOpsqOltutMc3MY1`
 - cat command ətraflı [link](https://linuxize.com/post/linux-cat-command/)
 
