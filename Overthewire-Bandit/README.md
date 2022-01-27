@@ -637,3 +637,40 @@ gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
 ```
 - parolu copy edib çıxırıq `gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr`
+
+**Bandit [LEVEL 21->22](https://overthewire.org/wargames/bandit/bandit22.html)**
+![bandit leve21-22](https://i.imgur.com/Dede2oi.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit21
+```
+`gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr`
+- Burada biz PenTesting/Hacking Ssenarilərində hücuma açıq olan başqa bir vektoru görürük: Səviyyə 21 -> Səviyyə 22 səhifəsinə görə, cronjob müntəzəm olaraq əmri yerinə yetirir. Gəlin buna bir nəzər salaq.
+
+```
+bandit21@bandit:~$ ls -la /etc/cron.d
+total 28
+drwxr-xr-x 2 root root 4096 Dec 4 01:58 .
+drwxr-xr-x 88 root root 4096 Aug 3 09:58 ..
+-rw-r--r-- 1 root root 189 Jan 25 2017 atop
+-rw-r--r-- 1 root root 120 Oct 16 2018 cronjob_bandit22
+-rw-r--r-- 1 root root 122 Oct 16 2018 cronjob_bandit23
+-rw-r--r-- 1 root root 120 Oct 16 2018 cronjob_bandit24
+-rw-r--r-- 1 root root 102 Oct 7 2017 .placeholder
+bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+bandit21@bandit:~$ ls -la /usr/bin/cronjob_bandit22.sh
+-rwxr-x--- 1 bandit22 bandit21 130 Oct 16 2018 /usr/bin/cronjob_bandit22.sh
+bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+```
+- Burada nə baş verdiyini addım-addım nəzərdən keçirək:
+- Əvvəlcə “/etc/cron.d” kataloquna baxırıq, burada bir neçə cronjob görə bilərik. Burada maraqlı olan “cronjob_bandit22” olardı, çünki 22-ci Səviyyə hazırda əldə etməyi hədəflədiyimiz səviyyədir.
+
+- Konfiqurasiya bizə “/usr/bin/cronjob_bandit22.sh” faylını icra edən müntəzəm olaraq işləyən bir işin olduğunu bildirir. `ls -la` istifadə edərək həmin fayla baxsaq, oxumaq icazələrimizin olduğunu görə bilərik və məzmunu yoxlamaq üçün ondan istifadə edirik. Bu bash skripti “tmp” qovluğundakı faylın icazələrini hamı tərəfindən oxuna biləcək şəkildə təyin edir və sonra “/etc/bandit_pass/bandit22” faylının məzmununu “/tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv” olaraq çıxarır. Həmin faylın məzmununu oxusaq, 22-ci Səviyyə üçün parol alırıq!
+
+- parolu copy edib çıxırıq `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
