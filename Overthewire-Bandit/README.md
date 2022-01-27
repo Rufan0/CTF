@@ -5,7 +5,7 @@
 **CTF haqqında ətraflı-[link](https://overthewire.org/wargames/bandit/)**
 
 
-SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz mənim istifadə etdiyim əməliyyat sistemi Windows 11-dir və mən WSL-Linux vasitəsilə bağlanıram
+SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz mənim istifadə mən WSL-Linux vasitəsilə bağlanıram.
 
 [Putty](https://putty.org/) vasitəsilə də bağlana bilərsiniz 
 
