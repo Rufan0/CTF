@@ -11,6 +11,8 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 
 >[Putty yükləmək üçün izləyə bilərsiniz](https://youtu.be/pLxR7EddEeM)
 
+
+
 İstifadə etdiyim mənbələr:
 > Sources I used:
 
