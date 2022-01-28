@@ -13,7 +13,7 @@ SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz 
 
 
 
-İstifadə etdiyim mənbələr:
+-İstifadə etdiyim mənbələr:
 > Sources I used:
 
 - https://hackinganarchy.wordpress.com/2020/01/20/overthewire-bandit-writeup/
