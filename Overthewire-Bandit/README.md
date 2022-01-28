@@ -674,3 +674,51 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 - Konfiqurasiya bizə “/usr/bin/cronjob_bandit22.sh” faylını icra edən müntəzəm olaraq işləyən bir işin olduğunu bildirir. `ls -la` istifadə edərək həmin fayla baxsaq, oxumaq icazələrimizin olduğunu görə bilərik və məzmunu yoxlamaq üçün ondan istifadə edirik. Bu bash skripti “tmp” qovluğundakı faylın icazələrini hamı tərəfindən oxuna biləcək şəkildə təyin edir və sonra “/etc/bandit_pass/bandit22” faylının məzmununu “/tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv” olaraq çıxarır. Həmin faylın məzmununu oxusaq, 22-ci Səviyyə üçün parol alırıq!
 
 - parolu copy edib çıxırıq `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
+
+
+**Bandit [LEVEL 22->3](https://overthewire.org/wargames/bandit/bandit23.html)** 
+
+![bandit level-22->23](https://i.imgur.com/U4qKyOh.png)
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit22
+
+`Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
+```
+- Səviyyə 22 -> Səviyyə 23 səhifəsinə görə, biz əsasən Səviyyə 21-də olduğu kimi etməliyik:
+```
+bandit22@bandit:~$ ls -la /etc/cron.d
+total 28
+drwxr-xr-x 2 root root 4096 Dec 4 01:58 .
+drwxr-xr-x 88 root root 4096 Aug 3 09:58 ..
+-rw-r--r-- 1 root root 189 Jan 25 2017 atop
+-rw-r--r-- 1 root root 120 Oct 16 2018 cronjob_bandit22
+-rw-r--r-- 1 root root 122 Oct 16 2018 cronjob_bandit23
+-rw-r--r-- 1 root root 120 Oct 16 2018 cronjob_bandit24
+-rw-r--r-- 1 root root 102 Oct 7 2017 .placeholder
+bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
+bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+```
+
+- Bu, əsasən Səviyyə 21-in birinci yarısı ilə eyni olduğundan, burada təfərrüata varmayacağam. Fərqli olan, icra edilən bash faylıdır. Cronjob işlədikdə, whoami "bandit23"-ü qaytaracaq. Bununla biz “mytarget” kodunu yenidən qura və parolun fayl adını əldə edə bilərik.
+
+>Md5sumun nə etdiyini merak edənlər: MD5 sabit ölçüdə bir dəyər qaytaran bir tərəfli alqoritm olan hashing alqoritmidir.
+
+
+```
+bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+- parolu copy edib çıxırıq `jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n`
