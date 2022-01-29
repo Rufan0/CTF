@@ -5,7 +5,7 @@
 **CTF haqqında ətraflı-[link](https://overthewire.org/wargames/bandit/)**
 
 
-SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz mənim istifadə mən [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) vasitəsilə bağlanıram.
+SSH bağlantısı etmək üçün 1 neçə proqramdan istifadə edə bilərsiniz mən [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) vasitəsilə bağlanıram.
 
 [Putty](https://putty.org/) vasitəsilə də bağlana bilərsiniz 
 
