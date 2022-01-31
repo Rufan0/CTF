@@ -831,6 +831,6 @@ The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 
 
 
-- parolu copy edib çıxırıq `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`
+- parolu copy edib çıxırıq `uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG`
 
 
