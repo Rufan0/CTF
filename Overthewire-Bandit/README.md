@@ -792,7 +792,7 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 - parolu copy edib çıxırıq `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
 
 **Bandit [LEVEL 24->25](https://overthewire.org/wargames/bandit/bandit25.html)**
-![bandit leve24-25](https://i.imgur.com/KNYELn6.png)
+![bandit leve24-25](https://i.imgur.com/ugV4AfI.png)
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit24
 ```
