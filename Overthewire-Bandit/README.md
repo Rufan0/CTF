@@ -798,7 +798,7 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit24
 ```
 - `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
 
-- Səviyyə 24 -> Səviyyə 25 səhifəsinə görə, bu Səviyyə bizi bruteforcing anlayışı ilə tanış edir. Bruteforcing o deməkdir ki, biz düzgün olanı əldə edənə qədər hər bir imkanı sınayırıq. Bunu əl ilə etmək yorucu və inanılmaz vaxt aparacaq, buna görə də, əlbəttə ki, bunun üçün bir skript yazacağıq:
+- Bu Səviyyə bizi bruteforcing anlayışı ilə tanış edir. Bruteforcing o deməkdir ki, biz düzgün olanı əldə edənə qədər hər bir imkanı sınayırıq. Bunu əl ilə etmək yorucu və inanılmaz vaxt aparacaq, buna görə də, əlbəttə ki, bunun üçün bir skript yazacağıq:
 
 ```
 vim /tmp/hackinganarchy.sh
