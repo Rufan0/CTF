@@ -814,6 +814,9 @@ done | nc localhost 30002
 - Seq əmri 0-dan 9999-a qədər olan nömrələrin siyahısını qaytarır, -f $04g parametri isə həmişə 4 simvol uzunluğunda olması üçün ona qabaqcıl sıfırları yazmağı əmr edir. Ətrafındakı "` "` onu əmr sətirinin özündən deyil, əmrin çıxışından istifadə etməyə imkan verir.
 
 - Əvvəlcə skripti icra edilə bilən hala gətirməliyik:
+
+`chmod +x /tmp/hackinganarchy.sh`
+
 - +x parametri sadəcə o deməkdir ki, biz özümüzə həmin skript üzərində icra edilə bilən hüquqlar veririk.
 
 - Sonra onu işə salırıq, lakin bir tutma(grep) ilə:
