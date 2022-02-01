@@ -853,7 +853,7 @@ drwxr-xr-x 41 root root 4096 Oct 16 2018 ..
 -rw-r--r-- 1 root root 675 May 15 2017 .profile
 ```
 
-- Bu bir az fərqlidir. Dərhal 26-cı Səviyyə üçün açarları alırıq, lakin Səviyyə 25 -> Səviyyə 26 səhifəsi bizə normal “/bin/bash” shalli almadığımızı bildirir. “/etc/passwd” faylı bizə hansı istifadəçinin hansı shalld-dan istifadə etdiyini bildirir:
+- Bu bir az fərqlidir. Dərhal 26-cı Səviyyə üçün açarları alırıq, lakin Səviyyə 25 -> Səviyyə 26 səhifəsi bizə normal “/bin/bash” shall-i almadığımızı bildirir. “/etc/passwd” faylı bizə hansı istifadəçinin hansı shall-dən istifadə etdiyini bildirir:
 ```
 bandit25@bandit:~$ cat /etc/passwd
 [...]
