@@ -896,8 +896,6 @@ $ pwd
 ```
 
 
-- parolu copy edib çıxırıq `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
-
 
 
 
