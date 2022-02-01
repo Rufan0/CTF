@@ -834,3 +834,71 @@ The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 - parolu copy edib çıxırıq `uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG`
 
 
+**Bandit [LEVEL 25->26](https://overthewire.org/wargames/bandit/bandit26.html)**
+![bandit leve25-26](https://i.imgur.com/2oUdPoU.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit25
+```
+- `uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG`
+```
+bandit25@bandit:~$ ls -la
+total 32
+drwxr-xr-x 2 root root 4096 Dec 16 00:38 .
+drwxr-xr-x 41 root root 4096 Oct 16 2018 ..
+-rw-r----- 1 bandit25 bandit25 33 Dec 16 00:38 .bandit24.password
+-r-------- 1 bandit25 bandit25 1679 Oct 16 2018 bandit26.sshkey
+-rw-r--r-- 1 root root 220 May 15 2017 .bash_logout
+-rw-r--r-- 1 root root 3526 May 15 2017 .bashrc
+-rw-r----- 1 bandit25 bandit25 4 Dec 16 00:38 .pin
+-rw-r--r-- 1 root root 675 May 15 2017 .profile
+```
+
+- Bu bir az fərqlidir. Dərhal 26-cı Səviyyə üçün açarları alırıq, lakin Səviyyə 25 -> Səviyyə 26 səhifəsi bizə normal “/bin/bash” shalli almadığımızı bildirir. “/etc/passwd” faylı bizə hansı istifadəçinin hansı shalld-dan istifadə etdiyini bildirir:
+```
+bandit25@bandit:~$ cat /etc/passwd
+[...]
+bandit23:x:11023:11023:bandit level 23:/home/bandit23:/bin/bash
+bandit24:x:11024:11024:bandit level 24:/home/bandit24:/bin/bash
+bandit25:x:11025:11025:bandit level 25:/home/bandit25:/bin/bash
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+bandit27:x:11027:11027:bandit level 27:/home/bandit27:/bin/bash
+bandit28:x:11028:11028:bandit level 28:/home/bandit28:/bin/bash
+[...]
+```
+
+- Göründüyü kimi, bandit26 üçün standart shall kimi “/usr/bin/showtext” adlı proqram istifadə olunur. Beləliklə, SSH istifadə edərək qoşulmağa çalışdığımız zaman icra ediləcək şey budur. Gəlin buna nəzər salaq:
+
+```
+bandit25@bandit:~$ cat /usr/bin/showtext
+#!/bin/sh
+export TERM=linux
+more ~/text.txt
+exit 0
+```
+- Exit 0 hissəsi bir az narahat edir. Qoşulmağa çalışdığımız anda shell çıxış edir. Bunun öhdəsindən gəlmək üçün kiçik bir hiylə var: Terminal pəncərənizi minimal ölçüyə endirəsəniz daha sonra more əmri ilə faylı text faylı oxumağa çalışırsınız.
+- v düyməsini sıxsaq, redaktora düşəcəyik. Adətən bu vim və ya nano olur. Hər ikisi bizə faktiki shall almağa imkan verəcək. Redaktordan necə çıxmaq barədə yaxşı bir mənbə   [GTFOBinsdir.](https://gtfobins.github.io/)
+
+- `bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost`
+
+- Belə ki, biz bu hiylə edib v düyməsini sıxsaq, görərik ki, [vi](https://man7.org/linux/man-pages/man1/vi.1p.html)-yə düşə bilərik. Buradan GTFOBins biliklərindən istifadə edə bilərik, daxil olun
+
+```
+:set shell=/bin/sh
+:shell
+```
+- `whoami` yazsaq görərik ki bandir26-yıq `pwd` yazaraq bandit26 da olduğumuzu görə bilərik.
+
+```
+$ whoami
+bandit26
+$ pwd
+/home/bandit26
+```
+
+
+- parolu copy edib çıxırıq `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
+
+
+
+
+
