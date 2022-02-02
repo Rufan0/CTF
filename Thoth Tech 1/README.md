@@ -1,5 +1,7 @@
 # Thoth Tech 1 CTF Həlli
 
+### CTF ətraflı izah [Link](https://rufan0.github.io/blog/Thoth-Tech1)
+
 - Salam hər kəsə
 
 - Bu gün sizinlə Thoth Tech: 1 adlı ctfi həll edəcəyik
