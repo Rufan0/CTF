@@ -679,7 +679,7 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 - parolu copy edib çıxırıq `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
 
 
-**Bandit [LEVEL 22->3](https://overthewire.org/wargames/bandit/bandit23.html)** 
+**Bandit [LEVEL 22->23](https://overthewire.org/wargames/bandit/bandit23.html)** 
 
 ![bandit level-22->23](https://i.imgur.com/U4qKyOh.png)
 
@@ -920,6 +920,8 @@ $ ./bandit27-do cat /etc/bandit_pass/bandit27
 3ba3118a22e93127a4ed485be72ef5ea
 ```
 
+- parolu copy edib çıxırıq `3ba3118a22e93127a4ed485be72ef5ea`
+
 
 **Bandit [LEVEL 27->28](https://overthewire.org/wargames/bandit/bandit28.html)**
 ![bandit leve27->28](https://i.imgur.com/u9bq2Jm.png)
@@ -957,9 +959,10 @@ bandit27@bandit:/tmp/hackinganarchy_27/repo$ cat README
 The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 ```
 
+- Git deposunun klonlaşdırılması üçün parol Səviyyə 27-nin özü üçün parol ilə eynidir.
+
 - parolu copy edib çıxırıq `0ef186ac70e04ea33b4c1853d2526fa2`
 
-- Git deposunun klonlaşdırılması üçün parol Səviyyə 27-nin özü üçün parol ilə eynidir.
 
 
 **Bandit [LEVEL 28->29](https://overthewire.org/wargames/bandit/bandit29.html)**
