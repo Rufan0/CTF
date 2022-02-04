@@ -898,5 +898,138 @@ $ pwd
 
 
 
+**Bandit [LEVEL 26->27](https://overthewire.org/wargames/bandit/bandit27.html)**
+![bandit leve26->27](https://i.imgur.com/xWblLVg.png)
+
+Həll 19-cu Səviyyə ilə eynidir:
+
+```
+$ ls -la
+total 36
+drwxr-xr-x 3 root root 4096 Oct 16 2018 .
+drwxr-xr-x 41 root root 4096 Oct 16 2018 ..
+-rwsr-x--- 1 bandit27 bandit26 7296 Oct 16 2018 bandit27-do
+-rw-r--r-- 1 root root 220 May 15 2017 .bash_logout
+-rw-r--r-- 1 root root 3526 May 15 2017 .bashrc
+-rw-r--r-- 1 root root 675 May 15 2017 .profile
+drwxr-xr-x 2 root root 4096 Oct 16 2018 .ssh
+-rw-r----- 1 bandit26 bandit26 258 Oct 16 2018 text.txt
+```
+```
+$ ./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4ed485be72ef5ea
+```
 
 
+**Bandit [LEVEL 27->28](https://overthewire.org/wargames/bandit/bandit28.html)**
+![bandit leve27->28](https://i.imgur.com/u9bq2Jm.png)
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit27
+```
+`3ba3118a22e93127a4ed485be72ef5ea`
+
+- Bu səviyyə bizi git ilə tanış edir. Bizə sadəcə bir deponu klonlaşdırmaq və parolu tutmaq lazımdır:
+
+```
+bandit27@bandit:~$ cd /tmp
+bandit27@bandit:/tmp$ mkdir hackinganarchy_27
+bandit27@bandit:/tmp$ cd hackinganarchy_27
+bandit27@bandit:/tmp/hackinganarchy_27$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+Cloning into 'repo'...
+bandit27-git@localhost's password:
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+bandit27@bandit:/tmp/hackinganarchy_27$ ls -la
+total 305928
+drwxr-sr-x 3 bandit27 root 4096 Jan 17 17:06 .
+drwxrws-wt 1 root root 313204736 Jan 17 17:06 ..
+drwxr-sr-x 3 bandit27 root 4096 Jan 17 17:06 repo
+bandit27@bandit:/tmp/hackinganarchy_27$ cd repo/
+bandit27@bandit:/tmp/hackinganarchy_27/repo$ ls -la
+total 16
+drwxr-sr-x 3 bandit27 root 4096 Jan 17 17:06 .
+drwxr-sr-x 3 bandit27 root 4096 Jan 17 17:06 ..
+drwxr-sr-x 8 bandit27 root 4096 Jan 17 17:06 .git
+-rw-r--r-- 1 bandit27 root 68 Jan 17 17:06 README
+bandit27@bandit:/tmp/hackinganarchy_27/repo$ cat README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+```
+
+- parolu copy edib çıxırıq `0ef186ac70e04ea33b4c1853d2526fa2`
+
+- Git deposunun klonlaşdırılması üçün parol Səviyyə 27-nin özü üçün parol ilə eynidir.
+
+
+**Bandit [LEVEL 28->29](https://overthewire.org/wargames/bandit/bandit29.html)**
+![bandit leve28->29](https://i.imgur.com/x6iiNLX.png)
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit28
+```
+`0ef186ac70e04ea33b4c1853d2526fa2`
+
+Bu səviyyə 27 ilə demək olar ki, eynidir.
+
+```
+bandit28@bandit:~$ cd /tmp
+bandit28@bandit:/tmp$ mkdir hackinganarchy_28
+bandit28@bandit:/tmp$ cd hackinganarchy_28
+bandit28@bandit:/tmp/hackinganarchy_28$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+Cloning into 'repo'...
+bandit28-git@localhost's password:
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (2/2), done.
+bandit28@bandit:/tmp/hackinganarchy_28$ cd repo/
+bandit28@bandit:/tmp/hackinganarchy_28/repo$ ls -la
+total 16
+drwxr-sr-x 3 bandit28 root 4096 Jan 17 17:09 .
+drwxr-sr-x 3 bandit28 root 4096 Jan 17 17:09 ..
+drwxr-sr-x 8 bandit28 root 4096 Jan 17 17:09 .git
+-rw-r--r-- 1 bandit28 root 111 Jan 17 17:09 README.md
+bandit28@bandit:/tmp/hackinganarchy_28/repo$ cat README.md
+# Bandit Notes
+Some notes for level29 of bandit.
+## credentials
+- username: bandit29
+- password: xxxxxxxxxx
+```
+
+- Yaxşı, eyni deyil. git versiyaya nəzarət alətidir, ona görə də burada aydın olan fikir ondan ibarətdir ki, bir vaxtlar parol orada aydın mətndə dayanırdı, lakin sonra silindi. :D
+- Günlüklərə nəzər salmaq bizim fərziyyəmizi təsdiqləyir:
+
+```
+bandit28@bandit:/tmp/hackinganarchy_28/repo$ git log
+commit 073c27c130e6ee407e12faad1dd3848a110c4f95
+Author: Morla Porla
+Date: Tue Oct 16 14:00:39 2018 +0200
+fix info leak
+```
+
+- Beləliklə, biz faylın köhnə versiyasını bərpa etməliyik. Yaxud, biz sadəcə həmin konkret öhdəlikdə edilən dəyişikliklərə baxırıq:
+
+```
+bandit28@bandit:/tmp/hackinganarchy_28/repo$ git show 073c27c130e6ee407e12faad1dd3848a110c4f95
+[...]
+-- password: bbc96594b4e001778eee9975372716b2
++- password: xxxxxxxxxx
+```
+- Orada "qarışdırılmadan" əvvəl parolumuz var.
+
+- parolu copy edib çıxırıq `bbc96594b4e001778eee9975372716b2`
+
+
+**Bandit [LEVEL 29->30](https://overthewire.org/wargames/bandit/bandit30.html)**
+![bandit leve29->30](https://i.imgur.com/x2MejIf.png)
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit29
+```
+`bbc96594b4e001778eee9975372716b2`
+
+
+- parolu copy edib çıxırıq ` `
