@@ -1165,6 +1165,95 @@ Branch: master
 - Bu səviyyə bizi push-dən istifadə edərək, faylları uzaq git repozitoriyasına yerləşdirməklə tanış edir.
 - “README.md” o qədər dostdur ki, bizə nə edəcəyimizi dəqiq deyir.
 - – “key.txt” adı və “Mən daxil ola bilərəmmi?” məzmunlu fayl yaradın. “May I come in?”
+- Əvvəlcə faylı yaradırıq:
+```
+bandit31@bandit:/tmp/hackinganarchy_31/repo$ echo "May I come in?" > key.txt
+```
+- Sonra onu əlavə etməliyik:
+```
+bandit31@bandit:/tmp/hackinganarchy_31/repo$ git add key.txt -f
+```
+- Dəyişikliklərimizi gözəl bir kiçik mesajla həyata keçiririk [commit](https://git-scm.com/docs/git-commit) : 
+```
+bandit31@bandit:/tmp/hackinganarchy_31/repo$ git commit -m "Nice little message."
+[master dfbc84e] Nice little message.
+1 file changed, 1 insertion(+)
+create mode 100644 key.txt
+```
+Və sonra push edirik:
+```
+bandit31@bandit:/tmp/hackinganarchy_31/repo$ git push
+bandit31-git@localhost's password:
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 330 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+To ssh://localhost/home/bandit31-git/repo
+! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-git/repo'
+```
+- Yaxşı, bu, əslində işləmir (bu, başqaları üçün səviyyəni poza bilər), lakin parolumuz var və bizə lazım olan tək şey budur!
 
 
-- parolu copy edib çıxırıq `47e603bb428404d265f59c42920d81e5`
+- parolu copy edib çıxırıq `56a9bf19c63d650ce78e6ec0354ee45e`
+
+
+**Bandit [LEVEL 30->31](https://overthewire.org/wargames/bandit/bandit33.html)**
+![bandit leve30->31](https://i.imgur.com/pQj2QI9.png)
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit32
+```
+```
+56a9bf19c63d650ce78e6ec0354ee45e
+```
+- Başqa bir gün, başqa bir git səviyyəsi
+```
+WELCOME TO THE UPPERCASE SHELL
+>>
+```
+- Yaxşı, bu, "UPPERCASE SHELL" dir. Bu nə edir?
+```
+>> id
+sh: 1: ID: not found
+```
+
+- Göründüyü kimi (və təəccüblü deyil), təhlil edilməzdən əvvəl daxil etdiyimiz hər şeyi böyük hərfə çevirir. Linux-da əksər əmrlər kiçik hərflərlə olduğundan, biz burada çox şey edə bilmərik. Odur ki, biz bunun qarşısını almaq üçün bir yol tapmalıyıq.
+```
+>> -a
+sh: 0: Illegal option -A
+>> -b
+sh: 0: Illegal option -B
+>> -c
+sh: 0: Illegal option -
+```
+- Bəzi fuzzing bizə göstərir ki, daxilolma yəqin ki, alınır, böyük hərfə çevrilir və sonra sh əmrinə keçdi. sh üçün etibarlı parametrlər kimi -C filtred olunur.
+
+- Bash dilində $n (“n” rəqəmi təmsil edir) əmr çağırışının n-ci arqumentinə istinad edir. $1 birinci parametr, $2 ikinci və s. $0 əmrin özünə aiddir. Yuxarıda gördüyümüz kimi, girişimiz sh çağırışına ötürülür. $0 sh-nin özünə istinad edərək yeni shellə (BÖYÜK HƏRF mexanikasız) start verəcəkdir.
+```
+>> $0
+$ ls -la
+total 28
+drwxr-xr-x 2 root root 4096 Oct 16 2018 .
+drwxr-xr-x 41 root root 4096 Oct 16 2018 ..
+-rw-r--r-- 1 root root 220 May 15 2017 .bash_logout
+-rw-r--r-- 1 root root 3526 May 15 2017 .bashrc
+-rw-r--r-- 1 root root 675 May 15 2017 .profile
+-rwsr-x--- 1 bandit33 bandit32 7556 Oct 16 2018 uppershell
+```
+- İşləyən shellimiz var! İndi sadəcə parolu götürək və onunla davam edək:
+```
+$ cat /etc/bandit_pass/bandit33
+c9c3199ddf4121b10cf581a98d51caee
+```
+- parolu copy edib çıxırıq `c9c3199ddf4121b10cf581a98d51caee`
