@@ -1034,5 +1034,137 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit29
 ```
 `bbc96594b4e001778eee9975372716b2`
 
+- Başqa bir git səviyyəsi.
 
-- parolu copy edib çıxırıq ` `
+- Mən repository  yoxlamaq üçün əmrləri bura yerləşdirməyəcəyəm, çünki bu, əvvəlki kimidir.
+
+```
+bandit29@bandit:/tmp/hackinganarchy_29/repo$ ls -la
+total 16
+drwxr-sr-x 3 bandit29 root 4096 Jan 17 17:16 .
+drwxr-sr-x 3 bandit29 root 4096 Jan 17 17:15 ..
+drwxr-sr-x 8 bandit29 root 4096 Jan 17 17:16 .git
+-rw-r--r-- 1 bandit29 root 131 Jan 17 17:16 README.md
+bandit29@bandit:/tmp/hackinganarchy_29/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+## credentials
+- username: bandit30
+- password: no passwords in production!
+```
+
+- “README.md” bizə bir ipucu verir: "no passwords in production!". Beləliklə, bəlkə bir development branch var? yoxlayaq:
+```
+bandit29@bandit:/tmp/hackinganarchy_29/repo$ git branch -r
+origin/HEAD -> origin/master
+origin/dev
+origin/master
+origin/sploits-dev
+```
+- Gəlin “dev” branchına baxaq və orada parolun olub-olmadığını görək:
+```
+bandit29@bandit:/tmp/hackinganarchy_29/repo$ git checkout dev
+Branch dev set up to track remote branch dev from origin.
+Switched to a new branch 'dev'
+bandit29@bandit:/tmp/hackinganarchy_29/repo$ ls -la
+total 20
+drwxr-sr-x 4 bandit29 root 4096 Jan 20 10:20 .
+drwxr-sr-x 3 bandit29 root 4096 Jan 17 17:15 ..
+drwxr-sr-x 2 bandit29 root 4096 Jan 20 10:20 code
+drwxr-sr-x 8 bandit29 root 4096 Jan 20 10:20 .git
+-rw-r--r-- 1 bandit29 root 134 Jan 20 10:20 README.md
+bandit29@bandit:/tmp/hackinganarchy_29/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+## credentials
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf
+```
+
+- parolu copy edib çıxırıq `5b90576bedb2cc04c86a9e924ce42faf`
+
+**Bandit [LEVEL 30->31](https://overthewire.org/wargames/bandit/bandit31.html)**
+![bandit leve30->31](https://i.imgur.com/JfSExXK.png)
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit30
+```
+```
+5b90576bedb2cc04c86a9e924ce42faf
+```
+- Başqa bir git səviyyəsi, buna görə də əvvəlki qaydada irəli gedək.
+```
+bandit30@bandit:/tmp/hackinganarchy_30/repo$ cat README.md
+just an epmty file... muahaha
+bandit30@bandit:/tmp/hackinganarchy_30/repo$ git log
+commit 3aa4c239f729b07deb99a52f125893e162daac9e
+Author: Ben Dover
+Date: Tue Oct 16 14:00:44 2018 +0200
+initial commit of README.md
+```
+
+- Parol yoxdur, keçmiş dəyişikliklər yoxdur. Bu bir az daha çətin ola bilər.
+```
+bandit30@bandit:/tmp/hackinganarchy_30/repo$ cd .git
+bandit30@bandit:/tmp/hackinganarchy_30/repo/.git$ ls -la
+total 52
+drwxr-sr-x 8 bandit30 root 4096 Jan 20 10:27 .
+drwxr-sr-x 3 bandit30 root 4096 Jan 20 10:22 ..
+drwxr-sr-x 2 bandit30 root 4096 Jan 20 10:22 branches
+-rw-r--r-- 1 bandit30 root 276 Jan 20 10:22 config
+-rw-r--r-- 1 bandit30 root 73 Jan 20 10:22 description
+-rw-r--r-- 1 bandit30 root 23 Jan 20 10:22 HEAD
+drwxr-sr-x 2 bandit30 root 4096 Jan 20 10:22 hooks
+-rw-r--r-- 1 bandit30 root 137 Jan 20 10:23 index
+drwxr-sr-x 2 bandit30 root 4096 Jan 20 10:22 info
+drwxr-sr-x 3 bandit30 root 4096 Jan 20 10:22 logs
+drwxr-sr-x 4 bandit30 root 4096 Jan 20 10:22 objects
+-rw-r--r-- 1 bandit30 root 165 Jan 20 10:22 packed-refs
+drwxr-sr-x 5 bandit30 root 4096 Jan 20 10:22 refs
+bandit30@bandit:/tmp/hackinganarchy_30/repo/.git$ cat packed-refs
+# pack-refs with: peeled fully-peeled
+3aa4c239f729b07deb99a52f125893e162daac9e refs/remotes/origin/master
+f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea refs/tags/secret
+```
+
+- Ətrafa nəzər salsaq, “gizli” adlı bir etiketin olduğunu göstərir.
+- Aşağıdakıları yerinə yetirdikdə təsdiq alırıq:
+```
+bandit30@bandit:/tmp/hackinganarchy_30/repo$ git tag
+secret
+```
+- İndi bizə lazım olan məlumatı necə əldə edək? Teqin məzmununu görmək üçün git-in show əmrindən istifadə edə bilərik:
+```
+bandit30@bandit:/tmp/hackinganarchy_30/repo$ git show tags/secret
+47e603bb428404d265f59c42920d81e5
+```
+
+- İnanın və ya inanmayın, bu növbəti səviyyə üçün paroldur. Biz bunu etdik!
+
+- parolu copy edib çıxırıq `47e603bb428404d265f59c42920d81e5`
+
+**Bandit [LEVEL 30->31](https://overthewire.org/wargames/bandit/bandit32.html)**
+![bandit leve30->31](https://i.imgur.com/lw6qG7v.png)
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit31
+```
+```
+47e603bb428404d265f59c42920d81e5
+```
+
+```
+bandit31@bandit:/tmp/hackinganarchy_31/repo$ cat README.md
+This time your task is to push a file to the remote repository.
+Details:
+File name: key.txt
+Content: 'May I come in?'
+Branch: master
+```
+
+- Bu səviyyə bizi push-dən istifadə edərək, faylları uzaq git repozitoriyasına yerləşdirməklə tanış edir.
+- “README.md” o qədər dostdur ki, bizə nə edəcəyimizi dəqiq deyir.
+- – “key.txt” adı və “Mən daxil ola bilərəmmi?” məzmunlu fayl yaradın. “May I come in?”
+
+
+- parolu copy edib çıxırıq `47e603bb428404d265f59c42920d81e5`
