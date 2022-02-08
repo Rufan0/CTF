@@ -51,7 +51,9 @@ bandit0@bandit:~$
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit1
 ```
-- `boJ9jbbUNNfktd78OOpsqOltutMc3MY1`
+```
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+```
 - `ls`
 - faylı oxumaq üçün `cat ./-`
 - parolu copy edib çıxırıq `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9`
@@ -61,7 +63,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit1
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit2
 ```
-- `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9`
+```
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+```
 - `ls`
 - faylı oxumaq üçün `cat 'spaces in this filename'`
 >və ya `cat spaces\ in\ this\ filename`   
@@ -72,7 +76,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit2
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit3
 ```
-- `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK`
+```
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+```
 - `ls`
 - `cd inhere`
 - `ls -la`
@@ -84,7 +90,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit3
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit4
 ```
-- `pIwrPrtPN36QITSp3EQaw936yaFoFgAB`
+```
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+```
 - `ls`
 - `cd inhere`
 - `ls -la`
@@ -96,7 +104,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit4
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit5
 ```
--`koReBOKuIDDepwhWk7jZC0RTdopnAYKh`
+```
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+```
 - `ls`
 - `cd inhere` və `ls -la`
 - Beləliklə, göstərişlər verilir ki, fayl "insan tərəfindən oxuna bilər, ölçüsü 1033 baytdır, icra edilə bilməz"
@@ -108,7 +118,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit5
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit6
 ```
-- `DXjZPULLxYr17uwoI01bNLQbtFemEgo7`
+```
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
 - `ls`
 - Beləliklə, faylın 33 bayt ölçüsündə bandit6 qrupuna, bandit7 istifadəçisinə məxsus olacağına dair göstərişlər verilir
 - `find / -user bandit7 -group bandit6 -size 33c -exec cat {} \; 2>/dev/null`
@@ -119,7 +131,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit6
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit7
 ```
-- `HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs`
+```
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+```
 - `ls`
 - İpucu verildiyi kimi data.txt-də olan parol “milyonuncu” ilə eyni sətirdədir.
 - `cat data.txt | grep "millionth"`
@@ -130,7 +144,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit7
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit8
 ```
-- `cvX2JJa4CFALtqS87jk27qwqGhBM9plV`
+```
+cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
 - `ls`
 - `cat data.txt | sort | uniq -c` və 1 olan sətirdədir parol
 - parolu copy edib çıxırıq `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`
@@ -140,7 +156,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit8
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit9
 ```
-- `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`
+```
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
 - `ls`
 - `string data.txt`
 - parolu copy edib çıxırıq `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`
@@ -152,7 +170,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit9
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit10
 ```
-- `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`
+```
+truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+```
 - `ls`
 - `cat data.txt | base64 -d`
 - parolu copy edib çıxırıq `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
@@ -162,7 +182,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit10
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit11
 ```
-- `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
+```
+IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
 - `ls`
 - `cat data.txt`
 - Göründüyü kimi, bizdən verilən faylda ROT13 decode yerinə yetirməliyik.
@@ -176,7 +198,9 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit11
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit12
 ```
-- `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
+```
+5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+```
 - `ls`
 - `cat data.txt` vər görürük ki faylımız hexdump formatindadir
  ```
@@ -250,7 +274,9 @@ The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit13
 ```
-- `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`
+```
+8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+```
 - ls etdikdən sonra görürük ki private key var və bunundab istifadə edib bandit 14 istifadəçisinə bağlanacağıq
 ```
 bandit13@bandit:~$ ls
@@ -271,7 +297,9 @@ Are you sure you want to continue connecting (yes/no)? yes
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit14
 ```
-- `4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e`
+```
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+```
 ```
 bandit14@bandit:~$ echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
 Correct!
@@ -284,7 +312,9 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit15
 ```
-- `BfMYroe26WYalil77FoDi9qh59eK5xNr`
+```
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+```
 ```
 bandit15@bandit:~$ echo "BfMYroe26WYalil77FoDi9qh59eK5xNr" | openssl s_client -connect localhost:30001 -ign_eof
 CONNECTED(00000003)
@@ -368,7 +398,9 @@ closed
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit16
 ```
-- `cluFn7wTiGryunymYOu4RcffSxQluehd`
+```
+cluFn7wTiGryunymYOu4RcffSxQluehd
+```
 
 - #Səviyyə 16 bizi hər haker alət dəstinin ən vacib hissələrindən biri ilə tanış edir: nmap
 
@@ -525,7 +557,8 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 ![bandit leve17-18](https://i.imgur.com/BJae1wK.png)
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit17
-
+```
+```
 xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ```
 - Səviyyə 17 -> Səviyyə 18 səhifəsi bizə deyir ki, “passwords.new” və passwords.old” arasında fərqli olan yalnız bir sətir var və o, növbəti səviyyə üçün paroldur. Diff aləti ilə biz faylları asanlıqla müqayisə edə və onların fərqlərini tapa bilərik:
@@ -548,7 +581,9 @@ bandit17@bandit:~$
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit18
 ```
- `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`
+```
+kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+```
 ```
 -→ ~ ssh bandit18@bandit.labs.overthewire.org -p 2220
 Byebye !
@@ -571,7 +606,9 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit19
 ```
-- `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x`
+```
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+```
 ```
 bandit19@bandit:~$ ls -la
 total 28
@@ -606,7 +643,9 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit20
 ```
-- `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`
+```
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+```
 ```
 bandit20@bandit:~$ ls -la
 total 32
@@ -646,7 +685,9 @@ gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit21
 ```
-`gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr`
+```
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+```
 - Burada biz PenTesting/Hacking Ssenarilərində hücuma açıq olan başqa bir vektoru görürük: Səviyyə 21 -> Səviyyə 22 səhifəsinə görə, cronjob müntəzəm olaraq əmri yerinə yetirir. Gəlin buna bir nəzər salaq.
 
 ```
@@ -686,7 +727,9 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit22
 
-`Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
+```
+```
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ```
 - Səviyyə 22 -> Səviyyə 23 səhifəsinə görə, biz əsasən Səviyyə 21-də olduğu kimi etməliyik:
 ```
@@ -731,7 +774,8 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ![bandit leve23-24](https://i.imgur.com/vkrIhAL.png)
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit23
-
+```
+```
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ```
 
@@ -796,7 +840,9 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit24
 ```
-- `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
+```
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
 
 - Bu Səviyyə bizi bruteforcing anlayışı ilə tanış edir. Bruteforcing o deməkdir ki, biz düzgün olanı əldə edənə qədər hər bir imkanı sınayırıq. Bunu əl ilə etmək yorucu və inanılmaz vaxt aparacaq, buna görə də, əlbəttə ki, bunun üçün bir skript yazacağıq:
 
@@ -839,7 +885,10 @@ The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit25
 ```
-- `uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG`
+```
+uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+```
+
 ```
 bandit25@bandit:~$ ls -la
 total 32
@@ -928,7 +977,9 @@ $ ./bandit27-do cat /etc/bandit_pass/bandit27
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit27
 ```
-`3ba3118a22e93127a4ed485be72ef5ea`
+```
+3ba3118a22e93127a4ed485be72ef5ea
+```
 
 - Bu səviyyə bizi git ilə tanış edir. Bizə sadəcə bir deponu klonlaşdırmaq və parolu tutmaq lazımdır:
 
@@ -971,7 +1022,9 @@ The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit28
 ```
-`0ef186ac70e04ea33b4c1853d2526fa2`
+```
+0ef186ac70e04ea33b4c1853d2526fa2
+```
 
 Bu səviyyə 27 ilə demək olar ki, eynidir.
 
@@ -1032,7 +1085,9 @@ bandit28@bandit:/tmp/hackinganarchy_28/repo$ git show 073c27c130e6ee407e12faad1d
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit29
 ```
-`bbc96594b4e001778eee9975372716b2`
+```
+bbc96594b4e001778eee9975372716b2
+```
 
 - Başqa bir git səviyyəsi.
 
