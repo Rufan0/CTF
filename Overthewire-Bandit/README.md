@@ -1311,4 +1311,4 @@ drwxr-xr-x 41 root root 4096 Oct 16 2018 ..
 $ cat /etc/bandit_pass/bandit33
 c9c3199ddf4121b10cf581a98d51caee
 ```
-- parolu copy edib çıxırıq `c9c3199ddf4121b10cf581a98d51caee`
+# Və bu da son, Bura qədər səbrlə oxuduğunuz üçün təşəkkürlər. Uğurlar!
